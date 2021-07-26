@@ -18,8 +18,6 @@ namespace Sample_Benchmark
         public static DateTime UsingRegex(string value)
         {
             var match = Regex.Match(value, @"^(\d\d\d\d)-(\d\d)-(\d\d)$");
-            if (!match.Success)
-                throw new Exception("Data inválida");
             return new DateTime(
                 int.Parse(match.Groups[1].Value),
                 int.Parse(match.Groups[2].Value),
@@ -31,8 +29,6 @@ namespace Sample_Benchmark
         public static DateTime UsingCompiledRegex(string value)
         {
             var match = regex.Match(value);
-            if (!match.Success)
-                throw new Exception("Data inválida");
             return new DateTime(
                 int.Parse(match.Groups[1].Value),
                 int.Parse(match.Groups[2].Value),

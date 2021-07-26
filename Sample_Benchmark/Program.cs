@@ -24,7 +24,7 @@ namespace Sample_Benchmark
     [MemoryDiagnoser]
     public class DateTimeParserBenchmark
     {
-        private static string textToParse = "2021-07-26";
+        private const string textToParse = "2021-07-26";
 
         [Benchmark] public DateTime UsingSplit() => DateParser.UsingSplit(textToParse);
         [Benchmark] public DateTime UsingRegex() => DateParser.UsingRegex(textToParse);
